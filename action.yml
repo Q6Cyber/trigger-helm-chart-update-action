@@ -1,0 +1,37 @@
+name: 'Trigger Helm Chart Workflow'
+description: 'Trigger Helm Chart Update Flow'
+author: 'Carl Richardson'
+inputs:
+  array-json:
+    description: 'Name of application or artifact Id'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Trigger Helm Chart
+      shell: bash
+      env:
+        JSON_ARRAY: ${{ inputs.array-json }}
+      run: |
+          JSON_STR=$(echo $JSON_ARRAY | xargs)        
+          echo "stringJson: $JSON_STR"
+          BASE64_STF=$(echo $JSON_STR | base64 -w 0 )
+          echo "Base64: $BASE64_STF"
+# uncooment when looks good
+#          RESPONSE_CODE=$(curl -L \
+#            -w "%{http_code}\n" \
+#            -X POST \
+#            -H "Accept: application/vnd.github+json" \
+#            -H "Authorization: Bearer $YOUR_TOKEN" \
+#            -H "X-GitHub-Api-Version: 2022-11-28" \
+#            https://api.github.com/repos/$OWNER/$REPO/dispatches \
+#            -d '{"event_type":"update_image","client_payload":{"config":"'$BASE64_STF'"}}')
+#
+#            if [ "$RESPONSE_CODE" == 204 ]
+#            then
+#              echo "Success: status Code is $RESPONSE_CODE"
+#              exit 0;
+#            else
+#              echo "fail: status Code is $RESPONSE_CODE"
+#              exit 1;
+#            fi
