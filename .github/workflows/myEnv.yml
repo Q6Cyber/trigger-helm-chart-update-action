@@ -1,0 +1,67 @@
+name: Trigger Helm Chart
+on:
+  [push, workflow_dispatch]
+jobs:
+  run-my-action:
+    name: Trigger Helm Chart
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Q6Cyber/trigger-helm-chart-update-action
+        with:
+          array-json: '[
+                        {
+                          "env": "prod",
+                          "application": "dataflow",
+                          "tag": "carls-test",
+                          "image": "carls-image",
+                          "imageKey": "deployment.image",
+                          "valuesParentFolder": "bdu",
+                          "misc": [
+                            {
+                              "key": "blah.blah",
+                              "value": "blahhhhhhh"
+                            },
+                            {
+                              "key": "blah.blah",
+                              "value": "blahhhhhhh"
+                            }
+                          ]
+                        },
+                        {
+                          "env": "prod",
+                          "application": "dataflow",
+                          "tag": "carls-test",
+                          "image": "carls-image",
+                          "imageKey": "deployment.image",
+                          "valuesParentFolder": "bnr",
+                          "misc": [
+                            {
+                              "key": "blah.blah",
+                              "value": "blahhhhhhh"
+                            },
+                            {
+                              "key": "blah.blah",
+                              "value": "blahhhhhhh"
+                            }
+                          ]
+                        },
+                        {
+                          "env": "prod",
+                          "application": "dataflow",
+                          "tag": "carls-test",
+                          "image": "carls-image",
+                          "imageKey": "deployment.image",
+                          "valuesParentFolder": "cards",
+                          "misc": [
+                            {
+                              "key": "cards",
+                              "value": "blahhhhhhh"
+                            },
+                            {
+                              "key": "dude",
+                              "value": "blahhhhhhh"
+                            }
+                          ]
+                        }
+                      ]'
