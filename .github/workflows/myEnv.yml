@@ -11,10 +11,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           # action file is located in another repo called workflows at /workflows/actions/action.yaml
-          repository: Q6Cyber/trigger-helm-chart-update-action
+          repository: Q6Cyber/helm-chart-trigger-workflow
           #  ref: mybranch  # in case it's not master branch
           # use deploy key instead of personal access token
           # see if i can get around this
+          # need this token: '${{ github.token }' fpr repos not in the actions thing
 #          ssh-key: ${{ secrets.WORKFLOWS_DEPLOYMENT_KEY }}
           path: ./
       - name: trigger action
