@@ -17,10 +17,6 @@ jobs:
           # see if i can get around this
           # need this token: '${{ github.token }' fpr repos not in the actions thing
 #          ssh-key: ${{ secrets.WORKFLOWS_DEPLOYMENT_KEY }}
-          path: ./
-      - name: trigger action
-        uses: ./
-        with:
           array-json: '[
                         {
                           "env": "prod",
