@@ -8,16 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Get composite run steps repository
-        uses: actions/checkout@v3
+        uses: actions/helm-chart-trigger-workflow@v0.0.2
         with:
-          # action file is located in another repo called workflows at /workflows/actions/action.yaml
-          repository: Q6Cyber/helm-chart-trigger-workflow
-          #  ref: mybranch  # in case it's not master branch
-          ref: master
-          # use deploy key instead of personal access token
-          # see if i can get around this
-          # need this token: '${{ github.token }' fpr repos not in the actions thing
-#          ssh-key: ${{ secrets.WORKFLOWS_DEPLOYMENT_KEY }}
           array-json: '[
                         {
                           "env": "prod",
