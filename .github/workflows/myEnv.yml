@@ -13,6 +13,7 @@ jobs:
           # action file is located in another repo called workflows at /workflows/actions/action.yaml
           repository: Q6Cyber/helm-chart-trigger-workflow
           #  ref: mybranch  # in case it's not master branch
+          ref: master
           # use deploy key instead of personal access token
           # see if i can get around this
           # need this token: '${{ github.token }' fpr repos not in the actions thing
