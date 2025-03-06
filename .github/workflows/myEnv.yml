@@ -15,7 +15,7 @@ jobs:
           # Select revision
           ref: v0.0.2
           # Personal access token to check out private repository
-#          token: ${{ secrets.GIT_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
           # Indicate where to check action out to
           path: .github/actions
 #      - name: Get composite run steps repository
