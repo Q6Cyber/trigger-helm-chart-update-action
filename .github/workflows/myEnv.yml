@@ -6,8 +6,19 @@ jobs:
     name: Trigger Helm Chart
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: Q6Cyber/trigger-helm-chart-update-action
+      - uses: actions/checkout@v3
+      - name: Get composite run steps repository
+        uses: actions/checkout@v3
+        with:
+          # action file is located in another repo called workflows at /workflows/actions/action.yaml
+          repository: Q6Cyber/trigger-helm-chart-update-action
+          #  ref: mybranch  # in case it's not master branch
+          # use deploy key instead of personal access token
+          # see if i can get around this
+#          ssh-key: ${{ secrets.WORKFLOWS_DEPLOYMENT_KEY }}
+          path: ./
+      - name: trigger action
+        uses: ./
         with:
           array-json: '[
                         {
