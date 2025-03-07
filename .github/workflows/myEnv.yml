@@ -1,6 +1,9 @@
 name: Trigger Helm Chart
 on:
   [push, workflow_dispatch]
+permissions:
+  id-token: write
+  contents: read
 jobs:
   run-my-action:
     name: Trigger Helm Chart
@@ -19,7 +22,7 @@ jobs:
 #          # Personal access token to check out private repository
 #          token: ${{ secrets.GIT_TOKEN }}
 #          # Indicate where to check action out to
-#          path: ./.github/actions
+#          path: ./.github/actions/
 #      - uses: ./.github/actions/helm-chart-trigger-workflow/.github/actions/action
         with:
           array-json: '[
