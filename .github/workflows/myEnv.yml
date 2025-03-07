@@ -17,9 +17,9 @@ jobs:
           # Personal access token to check out private repository
           token: ${{ secrets.GIT_TOKEN }}
           # Indicate where to check action out to
-          path: github/actions
+          path: ./
       - uses: actions/checkout@v3
-      - uses: ./github/actions
+      - uses: ./
         with:
           array-json: '[
                         {
