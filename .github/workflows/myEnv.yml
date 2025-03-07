@@ -12,7 +12,7 @@ jobs:
       - name: Get composite run steps repository
         uses: actions/checkout@v3
         with:
-          repository: Q6Cyber/helm-chart-trigger-workflow@v1.0.0
+          repository: Q6Cyber/helm-chart-trigger-workflow
           # Select revision (The relaese of the app above)
           ref: v1.0.0
           # Personal access token to check out private repository
