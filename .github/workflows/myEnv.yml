@@ -22,8 +22,8 @@ jobs:
           # Personal access token to check out private repository
           token: ${{ secrets.GIT_TOKEN }}
           # Indicate where to check action out to
-          path: ./.github/actions/
-      - uses: ./.github/actions/helm-chart-trigger-workflow
+          path: ./
+      - uses: ./helm-chart-trigger-workflow
         with:
           array-json: '[
                         {
