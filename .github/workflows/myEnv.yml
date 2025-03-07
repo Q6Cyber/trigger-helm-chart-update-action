@@ -18,12 +18,12 @@ jobs:
         with:
           repository: Q6Cyber/helm-chart-trigger-workflow
           # Select revision (The relaese of the app above)
-          ref: v1.0.0
+          ref: v1.0.1
           # Personal access token to check out private repository
           token: ${{ secrets.GIT_TOKEN }}
           # Indicate where to check action out to
           path: ./.github/actions/
-      - uses: ./.github/actions/helm-chart-trigger-workflow/.github/actions/action.yml
+      - uses: ./.github/actions/helm-chart-trigger-workflow/
         with:
           array-json: '[
                         {
