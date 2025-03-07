@@ -14,7 +14,7 @@ jobs:
 #      - name: Checkout and Run Custom Image Action
 #        uses: Q6Cyber/helm-chart-trigger-workflow@v1.0.0
       - name: Get composite run steps repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           repository: Q6Cyber/helm-chart-trigger-workflow
           # Select revision (The relaese of the app above)
