@@ -6,8 +6,7 @@ jobs:
     name: Trigger Helm Chart
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/Q6cyber/helm-chart-trigger-workflow@v1.0.0
+      - uses: actions/helm-chart-trigger-workflow@v1.0.0
         with:
           array-json: '[
                         {
