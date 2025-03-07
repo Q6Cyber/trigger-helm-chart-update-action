@@ -18,7 +18,6 @@ jobs:
           token: ${{ secrets.GIT_TOKEN }}
           # Indicate where to check action out to
           path: .github/actions
-      - uses: actions/checkout@v3
       - uses: ./.github/actions
         with:
           array-json: '[
