@@ -6,8 +6,8 @@ jobs:
     name: Trigger Helm Chart
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Action
-        uses: actions/checkout@v3
+#      - name: Checkout Action
+#        uses: actions/checkout@v3
       - uses: Q6Cyber/helm-chart-trigger-workflow@v1.0.0
 #      - name: Get composite run steps repository
 #        uses: actions/checkout@v3
