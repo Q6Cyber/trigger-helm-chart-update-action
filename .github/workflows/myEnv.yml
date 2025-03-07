@@ -19,7 +19,7 @@ jobs:
           # Indicate where to check action out to
           path: .github/actions
       - uses: actions/checkout@v4
-      - uses: .github/actions
+      - uses: ./.github/actions
         with:
           array-json: '[
                         {
