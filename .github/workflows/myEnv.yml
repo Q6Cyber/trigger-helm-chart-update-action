@@ -9,18 +9,9 @@ jobs:
       - name: Checkout Action
         uses: actions/checkout@v3
       - name: Get composite run steps repository
-        uses: actions/checkout@v3
-        with:
-          repository: Q6Cyber/helm-chart-trigger-workflow
-          # Select revision (The relaese of the app above)
-          ref: v1.0.0
-          # Personal access token to check out private repository
-          token: ${{ secrets.GIT_TOKEN }}
-          # Indicate where to check action out to
-          path: .github/actions
-      - uses: ./.github/actions
-        with:
-          array-json: '[
+        uses: Q6Cyber/helm-chart-trigger-workflow@v1.0.0
+          with:
+            array-json: '[
                         {
                           "env": "prod",
                           "application": "dataflow",
